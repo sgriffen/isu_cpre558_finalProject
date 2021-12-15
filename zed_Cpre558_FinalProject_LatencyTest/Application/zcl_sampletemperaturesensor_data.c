@@ -95,8 +95,9 @@ const int16_t zclSampleTemperatureSensor_MinMeasuredValue = SAMPLETEMPERATURESEN
 const uint16_t zclSampleTemperatureSensor_MaxMeasuredValue = SAMPLETEMPERATURESENSOR_MAX_MEASURED_VALUE;
 
 //Custom data
-uint16_t data_recieve = 0x0000;
-uint16_t data_send = 0x0000;
+//uint8_t data_send = 0xF1;
+//uint16_t data_send = 0xF234;
+uint32_t data_send = 0xF2345678;
 
 /*********************************************************************
  * ATTRIBUTE DEFINITIONS - Uses REAL cluster IDs
@@ -220,21 +221,12 @@ CONST zclAttrRec_t zclSampleTemperatureSensor_Attrs[] =
     }
   },
   {
-    ZCL_CLUSTER_ID_HVAC_THERMOSTAT,
+   ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
     {  // Attribute record
       CUSTOMSEND_ATTR_ID,
-      ZCL_DATATYPE_UINT16,
+      ZCL_DATATYPE_UINT32,
       ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
       (void *)&data_send
-    }
-   },
-   {
-    ZCL_CLUSTER_ID_HVAC_THERMOSTAT,
-    {  // Attribute record
-      CUSTOMRECIEVE_ATTR_ID,
-      ZCL_DATATYPE_UINT16,
-      ACCESS_CONTROL_READ | ACCESS_CLIENT,
-      (void *)&data_recieve
     }
    },
 };
