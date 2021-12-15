@@ -1,0 +1,22 @@
+### ignore list for Beaglebone firmware projects
+
+### ignore list for unwanted templace projects
+**/tirtos_*
+
+### ignore list for code composer studio
+!**/.ccsproject
+!**/.cproject
+!**/.project
+!**/.settings
+!**/makefile.defs
+**/Release
+**/.xdchelp
+**/.config
+**/.launches
+
+### ignore list for misc project configurations
+**/RemoteSystemsTempFiles/
+**/.metadata/
+**/.jxbrowser*/
+**/.jxbrowser.userdata/
+**/.tempFiles/
