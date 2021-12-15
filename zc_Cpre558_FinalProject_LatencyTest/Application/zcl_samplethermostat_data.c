@@ -310,19 +310,19 @@ CONST zclAttrRec_t zclSampleThermostat_Attrs[] =
    {  // Attribute record
      CUSTOMSEND_ATTR_ID,
      ZCL_DATATYPE_UINT16,
-     ACCESS_CONTROL_READ | ACCESS_CLIENT,
+     ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
      (void *)&data_send
    }
   },
   {
-     ZCL_CLUSTER_ID_HVAC_THERMOSTAT,
-     {  // Attribute record
-       CUSTOMRECIEVE_ATTR_ID,
-       ZCL_DATATYPE_UINT16,
-       ACCESS_CONTROL_READ | ACCESS_CLIENT,
-       (void *)&data_recieve
-     }
-    },
+   ZCL_CLUSTER_ID_HVAC_THERMOSTAT,
+   {  // Attribute record
+     CUSTOMRECIEVE_ATTR_ID,
+     ZCL_DATATYPE_UINT16,
+     ACCESS_CONTROL_READ | ACCESS_CLIENT,
+     (void *)&data_recieve
+   }
+  },
 };
 
 uint8_t CONST zclSampleThermostat_NumAttributes = ( sizeof(zclSampleThermostat_Attrs) / sizeof(zclSampleThermostat_Attrs[0]) );

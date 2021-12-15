@@ -7,7 +7,7 @@
         <srcFile name="package/cfg/app_pem4f.c"/>
     </sources>
     <configscripts>
-        <srcFile name="J:/.docs/academics/iowa_state/cpre558/project/workspace/zed_Cpre558_FinalProject_LatencyTest/app.cfg"/>
+        <srcFile name="C:/Users/griff/Documents/.docs/academics/iowa_state/cpre558/project/git/zed_Cpre558_FinalProject_LatencyTest/app.cfg"/>
     </configscripts>
     <makefiles>
         <srcFile name="package.mak" src="package.bld"/>
@@ -25,7 +25,7 @@
             platform="ti.platforms.tiva:TM4C1294NCPDT:1"
             isa="v7M4"
             suffix="em4f"
-            rootDir="C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS"
+            rootDir="C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS"
             os="undefined"
             rts="ti.targets.arm.rtsarm">
             <model endian="little"
@@ -44,7 +44,7 @@
         isPartial="false"
         xCfgScript="package/cfg/app_pem4f.cfg"
         xCfgPrefix="package/cfg/app_pem4f"
-        cfgScript="J:/.docs/academics/iowa_state/cpre558/project/workspace/zed_Cpre558_FinalProject_LatencyTest/app.cfg"
+        cfgScript="C:/Users/griff/Documents/.docs/academics/iowa_state/cpre558/project/git/zed_Cpre558_FinalProject_LatencyTest/app.cfg"
         cfgArgs="null"
         />
     </configurations>
@@ -56,7 +56,7 @@
         profile="release"
         xCfgScript="package/cfg/app_pem4f.cfg"
         xCfgPrefix="package/cfg/app_pem4f"
-        cfgScript="J:/.docs/academics/iowa_state/cpre558/project/workspace/zed_Cpre558_FinalProject_LatencyTest/app.cfg"
+        cfgScript="C:/Users/griff/Documents/.docs/academics/iowa_state/cpre558/project/git/zed_Cpre558_FinalProject_LatencyTest/app.cfg"
         cfgArgs="null"
         />
     </executables>

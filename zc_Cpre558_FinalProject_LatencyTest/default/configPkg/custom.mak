@@ -7,5 +7,5 @@
 #       or equal to the generated config header
 #
 linker.cmd: package/cfg/app_pem4f.xdl
-	$(SED) 's"^\"\(package/cfg/app_pem4fcfg.cmd\)\"$""\"J:/.docs/academics/iowa_state/cpre558/project/workspace/zc_Cpre558_FinalProject_LatencyTest/default/configPkg/\1\""' package/cfg/app_pem4f.xdl > $@
+	$(SED) 's"^\"\(package/cfg/app_pem4fcfg.cmd\)\"$""\"C:/Users/griff/Documents/.docs/academics/iowa_state/cpre558/project/git/zc_Cpre558_FinalProject_LatencyTest/default/configPkg/\1\""' package/cfg/app_pem4f.xdl > $@
 	-$(SETDATE) -r:max package/cfg/app_pem4f.h compiler.opt compiler.opt.defs

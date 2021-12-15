@@ -74,6 +74,9 @@ extern "C"
 
 #define SAMPLEAPP_END_DEVICE_REJOIN_DELAY 1000
 
+#define CUSTOMSEND_ATTR_ID      0x0558
+#define CUSTOMRECIEVE_ATTR_ID   0x0559
+
 /*********************************************************************
  * MACROS
  */
@@ -98,6 +101,9 @@ extern uint16_t zclSampleTemperatureSensor_IdentifyTime;
 extern int16_t zclSampleTemperatureSensor_MeasuredValue;
 extern const int16_t zclSampleTemperatureSensor_MinMeasuredValue;
 extern const uint16_t zclSampleTemperatureSensor_MaxMeasuredValue;
+
+extern uint16_t data_send;
+extern uint16_t data_recieve;
 
 /*********************************************************************
  * FUNCTIONS

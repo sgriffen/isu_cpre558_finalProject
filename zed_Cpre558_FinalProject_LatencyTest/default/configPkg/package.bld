@@ -11,7 +11,7 @@ var makeAssembly = false;
 var Executable = xdc.module('xdc.bld.Executable');
 
 var exeOpts = new Executable.Attrs({
-        cfgScript: 'J:/.docs/academics/iowa_state/cpre558/project/workspace/zed_Cpre558_FinalProject_LatencyTest/app.cfg',
+        cfgScript: 'C:/Users/griff/Documents/.docs/academics/iowa_state/cpre558/project/git/zed_Cpre558_FinalProject_LatencyTest/app.cfg',
         profile: 'release',
         cfgHome: 'configPkg',
 });
@@ -41,7 +41,7 @@ else {
 
 var thisObj = {
     cfg:        '../app.cfg',
-    outputPath: 'J:/.docs/academics/iowa_state/cpre558/project/workspace/zed_Cpre558_FinalProject_LatencyTest/default/configPkg',
+    outputPath: 'C:/Users/griff/Documents/.docs/academics/iowa_state/cpre558/project/git/zed_Cpre558_FinalProject_LatencyTest/default/configPkg',
     exeName:    'app' + suffix,
     exeIntName: 'app' + suffix.replace('.', '_'),
     targ:       targ,

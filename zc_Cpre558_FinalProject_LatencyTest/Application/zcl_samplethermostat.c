@@ -1199,7 +1199,7 @@ static void zclSampleThermostat_ProcessInReportCmd( zclIncoming_t *pInMsg )
   case CUSTOMRECIEVE_ATTR_ID:
       data_recieve = BUILD_UINT16(pInTempSensorReport->attrList[0].attrData[0], pInTempSensorReport->attrList[0].attrData[1]);
 
-      if (data_recieve != data_recieve_prev) {
+      if (data_recieve == data_send && data_recieve != data_recieve_prev) {
 
           if (!timer_idx) { // if array is empty, (current index)=(current time lap)
               timer_data[timer_idx] = timer_lap();
@@ -1462,15 +1462,15 @@ static void zclSampleThermostat_UpdateStatusLine(void)
     char lineFormat1[MAX_STATUS_LINE_VALUE_LEN] = {'\0'};
     char lineFormat2[MAX_STATUS_LINE_VALUE_LEN] = {'\0'};
 
-    strcat(lineFormat1, "["CUI_COLOR_YELLOW"Send Value"CUI_COLOR_RESET"] 0x%04x ");
-    strcat(lineFormat1, "["CUI_COLOR_YELLOW"Receive Value"CUI_COLOR_RESET"] 0x%04x");
-    strcat(lineFormat2, "["CUI_COLOR_YELLOW"Average time elapsed from send to receive"CUI_COLOR_RESET"] %lfms");
+    strcat(lineFormat1, "["CUI_COLOR_YELLOW"Sent Value"CUI_COLOR_RESET"] 0x%04x ");
+    strcat(lineFormat1, "["CUI_COLOR_YELLOW"Received Value"CUI_COLOR_RESET"] 0x%04x");
+    strcat(lineFormat2, "["CUI_COLOR_YELLOW"Average time elapsed from send to receive"CUI_COLOR_RESET"] %d ms");
 
     for (i = 0; i < timer_data_size; i++) { timer_average += timer_data[i]; }
     timer_average /= timer_data_size;
 
     CUI_statusLinePrintf(gCuiHandle, gSampleThermostatInfoLine1, lineFormat1, data_send, data_recieve);
-    CUI_statusLinePrintf(gCuiHandle, gSampleThermostatInfoLine2, lineFormat2, timer_average * 1000);
+    CUI_statusLinePrintf(gCuiHandle, gSampleThermostatInfoLine2, lineFormat2, (int)(timer_average * 1000));
 }
 
 #endif

@@ -214,6 +214,9 @@ static uint8_t zclSampleTemperatureSensor_ProcessInDiscCmdsRspCmd( zclIncoming_t
 static uint8_t zclSampleTemperatureSensor_ProcessInDiscAttrsRspCmd( zclIncoming_t *pInMsg );
 static uint8_t zclSampleTemperatureSensor_ProcessInDiscAttrsExtRspCmd( zclIncoming_t *pInMsg );
 #endif // ZCL_DISCOVER
+#ifdef ZCL_REPORT_DESTINATION_DEVICE
+static void zclSampleTemperatureSensor_ProcessInReportCmd( zclIncoming_t *pInMsg );
+#endif  // ZCL_REPORT_DESTINATION_DEVICE
 
 
 /*********************************************************************
@@ -262,6 +265,7 @@ static zclGeneral_AppCallbacks_t zclSampleTemperatureSensor_CmdCallbacks =
   NULL                                            // RSSI Location Response command
 };
 
+uint16_t data_recieve_prev = 0x0000;
 
 /*******************************************************************************
  * @fn          sampleApp_task
@@ -1024,7 +1028,7 @@ static uint8_t zclSampleTemperatureSensor_ProcessIncomingMsg( zclIncoming_t *pIn
       break;
 
     case ZCL_CMD_REPORT:
-      //zclSampleTemperatureSensor_ProcessInReportCmd( pInMsg );
+      zclSampleTemperatureSensor_ProcessInReportCmd( pInMsg );
       break;
 #endif
     case ZCL_CMD_DEFAULT_RSP:
@@ -1112,6 +1116,29 @@ static uint8_t zclSampleTemperatureSensor_ProcessInWriteRspCmd( zclIncoming_t *p
   return ( TRUE );
 }
 #endif // ZCL_WRITE
+
+/*********************************************************************
+ * @fn      zclSampleTemperatureSensor_ProcessInReportCmd
+ *
+ * @brief   Process the "Profile" Report Command
+ *
+ * @param   pInMsg - incoming message to process
+ *
+ * @return  none
+ */
+static void zclSampleTemperatureSensor_ProcessInReportCmd( zclIncoming_t *pInMsg ) {
+  zclReportCmd_t *pInTempSensorReport;
+
+  pInTempSensorReport = (zclReportCmd_t *)pInMsg->attrCmd;
+
+  switch (pInTempSensorReport->attrList[0].attrID) {
+      case CUSTOMRECIEVE_ATTR_ID:
+          data_recieve = BUILD_UINT16(pInTempSensorReport->attrList[0].attrData[0], pInTempSensorReport->attrList[0].attrData[1]);
+          if (data_recieve != data_recieve_prev) { data_send = data_recieve; }
+          break;
+  }
+
+}
 
 /*********************************************************************
  * @fn      zclSampleTemperatureSensor_ProcessInDefaultRspCmd
@@ -1310,11 +1337,10 @@ void zclSampleTemperatureSensor_UpdateStatusLine(void)
 {
   char lineFormat[MAX_STATUS_LINE_VALUE_LEN] = {'\0'};
 
-  strcpy(lineFormat, "["CUI_COLOR_YELLOW"Local Temperature"CUI_COLOR_RESET"] ");
+  strcat(lineFormat, "["CUI_COLOR_YELLOW"Received Value"CUI_COLOR_RESET"] 0x%04x ");
+  strcat(lineFormat, "["CUI_COLOR_YELLOW"Sent Value"CUI_COLOR_RESET"] 0x%04x ");
 
-  strcat(lineFormat, "%dC");
-
-  CUI_statusLinePrintf(gCuiHandle, gSampleTemperatureSensorInfoLine, lineFormat, (zclSampleTemperatureSensor_MeasuredValue / 100));
+  CUI_statusLinePrintf(gCuiHandle, gSampleTemperatureSensorInfoLine, lineFormat, data_recieve, data_send);
 }
 
 #endif
