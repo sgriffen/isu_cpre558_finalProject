@@ -9,11 +9,11 @@
  */
 
 
--l"C:\Users\griff\Documents\.docs\academics\iowa_state\cpre558\project\git\zc_Cpre558_FinalProject_LatencyTest\default\configPkg\package\cfg\app_pem4f.oem4f"
--l"C:\Users\griff\Documents\.docs\academics\iowa_state\cpre558\project\git\zc_Cpre558_FinalProject_LatencyTest\src\sysbios\rom_sysbios.aem4f"
+-l"J:\.docs\academics\iowa_state\cpre558\project\git\zc_Cpre558_FinalProject_LatencyTest\default\configPkg\package\cfg\app_pem4f.oem4f"
+-l"J:\.docs\academics\iowa_state\cpre558\project\git\zc_Cpre558_FinalProject_LatencyTest\src\sysbios\rom_sysbios.aem4f"
 -l"C:\ti\simplelink_cc13x2_26x2_sdk_5_20_00_52\kernel\tirtos\packages\ti\targets\arm\rtsarm\lib\boot.aem4f"
 -l"C:\ti\simplelink_cc13x2_26x2_sdk_5_20_00_52\kernel\tirtos\packages\ti\targets\arm\rtsarm\lib\auto_init.aem4f"
--l"C:\ti\xdctools_3_62_00_08_core\packages\xdc\rov\runtime\lib\xdc.rov.runtime.aem4f"
+-l"C:\ti\ccs1020\xdctools_3_62_00_08_core\packages\xdc\rov\runtime\lib\xdc.rov.runtime.aem4f"
 
 --retain="*(xdc.meta)"
 

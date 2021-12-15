@@ -17,7 +17,7 @@
 /* time variables */
 clock_t time_start;
 clock_t time_end;
-double time_lap;
+float time_lap;
 
 void timer_reset() {
 
@@ -35,7 +35,7 @@ void timer_start() {
 double timer_lap() {
 
     time_end = clock();
-    time_lap = ((double)(time_end - time_start)) / CLOCKS_PER_SEC;
+    time_lap = ((float)(time_end - time_start)) / CLOCKS_PER_SEC;
     return time_lap;
 }
 

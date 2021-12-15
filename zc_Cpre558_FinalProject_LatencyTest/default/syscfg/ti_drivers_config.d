@@ -1,21 +1,21 @@
 # FIXED
 
 syscfg/ti_drivers_config.obj: syscfg/ti_drivers_config.c
-syscfg/ti_drivers_config.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h
-syscfg/ti_drivers_config.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_ti_config.h
-syscfg/ti_drivers_config.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/linkage.h
-syscfg/ti_drivers_config.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdint.h
-syscfg/ti_drivers_config.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_stdint40.h
-syscfg/ti_drivers_config.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/stdint.h
-syscfg/ti_drivers_config.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/cdefs.h
-syscfg/ti_drivers_config.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_types.h
-syscfg/ti_drivers_config.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_types.h
-syscfg/ti_drivers_config.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_stdint.h
-syscfg/ti_drivers_config.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h
+syscfg/ti_drivers_config.obj: C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h
+syscfg/ti_drivers_config.obj: C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_ti_config.h
+syscfg/ti_drivers_config.obj: C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/linkage.h
+syscfg/ti_drivers_config.obj: C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdint.h
+syscfg/ti_drivers_config.obj: C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_stdint40.h
+syscfg/ti_drivers_config.obj: C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/stdint.h
+syscfg/ti_drivers_config.obj: C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/cdefs.h
+syscfg/ti_drivers_config.obj: C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_types.h
+syscfg/ti_drivers_config.obj: C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_types.h
+syscfg/ti_drivers_config.obj: C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_stdint.h
+syscfg/ti_drivers_config.obj: C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h
 syscfg/ti_drivers_config.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/devices/DeviceFamily.h
 syscfg/ti_drivers_config.obj: syscfg/ti_drivers_config.h
 syscfg/ti_drivers_config.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/drivers/PIN.h
-syscfg/ti_drivers_config.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdbool.h
+syscfg/ti_drivers_config.obj: C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdbool.h
 syscfg/ti_drivers_config.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/drivers/AESCBC.h
 syscfg/ti_drivers_config.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/drivers/cryptoutils/cryptokey/CryptoKey.h
 syscfg/ti_drivers_config.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/drivers/aescbc/AESCBCCC26XX.h
@@ -73,8 +73,8 @@ syscfg/ti_drivers_config.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source
 syscfg/ti_drivers_config.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/devices/cc13x2_cc26x2/inc/hw_adi.h
 syscfg/ti_drivers_config.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/devices/cc13x2_cc26x2/driverlib/vims.h
 syscfg/ti_drivers_config.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/devices/cc13x2_cc26x2/inc/hw_vims.h
-syscfg/ti_drivers_config.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/string.h
-syscfg/ti_drivers_config.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/xlocale/_string.h
+syscfg/ti_drivers_config.obj: C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/string.h
+syscfg/ti_drivers_config.obj: C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/xlocale/_string.h
 syscfg/ti_drivers_config.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/drivers/ECDSA.h
 syscfg/ti_drivers_config.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/drivers/ecdsa/ECDSACC26X2.h
 syscfg/ti_drivers_config.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/drivers/TRNG.h
@@ -119,27 +119,27 @@ syscfg/ti_drivers_config.obj: C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source
 
 syscfg/ti_drivers_config.c:
 
-C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h:
+C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h:
 
-C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_ti_config.h:
+C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_ti_config.h:
 
-C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/linkage.h:
+C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/linkage.h:
 
-C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdint.h:
+C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdint.h:
 
-C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_stdint40.h:
+C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_stdint40.h:
 
-C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/stdint.h:
+C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/stdint.h:
 
-C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/cdefs.h:
+C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/cdefs.h:
 
-C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_types.h:
+C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_types.h:
 
-C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_types.h:
+C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_types.h:
 
-C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_stdint.h:
+C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_stdint.h:
 
-C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h:
+C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h:
 
 C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/devices/DeviceFamily.h:
 
@@ -147,7 +147,7 @@ syscfg/ti_drivers_config.h:
 
 C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/drivers/PIN.h:
 
-C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdbool.h:
+C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdbool.h:
 
 C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/drivers/AESCBC.h:
 
@@ -263,9 +263,9 @@ C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/devices/cc13x2_cc26x2/driv
 
 C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/devices/cc13x2_cc26x2/inc/hw_vims.h:
 
-C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/string.h:
+C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/string.h:
 
-C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/xlocale/_string.h:
+C:/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/xlocale/_string.h:
 
 C:/ti/simplelink_cc13x2_26x2_sdk_5_20_00_52/source/ti/drivers/ECDSA.h:
 

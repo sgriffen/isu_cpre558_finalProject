@@ -74,8 +74,7 @@ extern "C"
 
 #define SAMPLEAPP_END_DEVICE_REJOIN_DELAY 1000
 
-#define CUSTOMSEND_ATTR_ID      0x0558
-#define CUSTOMRECIEVE_ATTR_ID   0x0559
+#define CUSTOMRECIEVE_ATTR_ID   0x0558
 
 /*********************************************************************
  * MACROS
@@ -114,17 +113,18 @@ extern uint8_t zclSampleThermostat_ControlSequenceOfOperation;
 
 extern uint8_t zclSampleThermostat_SystemMode;
 
-extern uint16_t data_send;
-extern uint16_t data_recieve;
+//extern uint8_t data_recieve;
+//extern uint16_t data_recieve;
+extern uint32_t data_recieve;
 
 /*********************************************************************
  * FUNCTIONS
  */
 
-extern void timer_reset();
-extern void timer_start();
-extern double timer_lap();
-extern double timer_previousLap();
+//extern void timer_reset();
+//extern void timer_start();
+//extern double timer_lap();
+//extern double timer_previousLap();
 
 /*
  *  Reset all writable attributes to their default values.

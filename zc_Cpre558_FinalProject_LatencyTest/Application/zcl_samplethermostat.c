@@ -362,10 +362,13 @@ GpSink_AppCallbacks_t zclSampleThermostat_GpSink_AppCallbacks =
 };
 #endif
 
-uint16_t data_recieve_prev = 0x0000;
-uint8_t timer_data_size = 1;
-uint8_t timer_idx = 0;
-double timer_data[100];
+//uint8_t data_recieve1 = 0x00;
+//uint8_t data_recieve2 = 0x00;
+//uint16_t data_recieve1 = 0x0000;
+//uint16_t data_recieve2 = 0x0000;
+uint32_t data_recieve1 = 0x00000000;
+uint32_t data_recieve2 = 0x00000000;
+
 
 /*******************************************************************************
  * @fn          sampleApp_task
@@ -543,10 +546,10 @@ static void zclSampleThermostat_Init( void )
   LED_Params_init(&ledParams);
   gRedLedHandle = LED_open(CONFIG_LED_RED, &ledParams);
 
-  timer_reset();
-
-  int i = 0;
-  for (i = 0; i < 100; i++) { timer_data[i] = 0.0; }
+//  timer_reset();
+//
+//  int i = 0;
+//  for (i = 0; i < 100; i++) { timer_data[i] = 0.0; }
 
   //Initialize the SampleDoorLock UI status line
   zclSampleThermostat_InitializeStatusLine(gCuiHandle);
@@ -1197,27 +1200,11 @@ static void zclSampleThermostat_ProcessInReportCmd( zclIncoming_t *pInMsg )
       zclSampleThermostat_LocalTemperature = BUILD_UINT16(pInTempSensorReport->attrList[0].attrData[0], pInTempSensorReport->attrList[0].attrData[1]);
       break;
   case CUSTOMRECIEVE_ATTR_ID:
-      data_recieve = BUILD_UINT16(pInTempSensorReport->attrList[0].attrData[0], pInTempSensorReport->attrList[0].attrData[1]);
-
-      if (data_recieve == data_send && data_recieve != data_recieve_prev) {
-
-          if (!timer_idx) { // if array is empty, (current index)=(current time lap)
-              timer_data[timer_idx] = timer_lap();
-          }
-          else if (timer_idx > 99) { // data index is 100 (array is full), reset index to front of data array
-              timer_idx = 0;
-              timer_data[timer_idx] = timer_lap() - timer_data[99]; // (first index of array)=((current lap time)-(last index in full array))
-          }
-          else { // if in the middle of the array, (current index)=((current lap time)-(previous index in full array))
-              if (!timer_idx) { timer_data[timer_idx] = timer_lap(); }
-              else { timer_data[timer_idx] = timer_lap() - timer_data[timer_idx-1]; }
-          }
-
-          timer_idx++;
-          data_send++;
-          if (timer_data_size < 100) { timer_data_size++; }
-      }
-      data_recieve_prev = data_recieve;
+//      data_recieve = pInTempSensorReport->attrList[0].attrData[0];
+//      data_recieve = BUILD_UINT16(pInTempSensorReport->attrList[0].attrData[0], pInTempSensorReport->attrList[0].attrData[1]);
+      data_recieve = BUILD_UINT32(pInTempSensorReport->attrList[0].attrData[0], pInTempSensorReport->attrList[0].attrData[1], pInTempSensorReport->attrList[0].attrData[2], pInTempSensorReport->attrList[0].attrData[3]);
+      if (pInMsg->msg->srcAddr.addr.shortAddr == 0x7eaf) { data_recieve1 = data_recieve; }
+      else { data_recieve2 = data_recieve; }
       break;
   }
 #ifndef CUI_DISABLE
@@ -1441,7 +1428,7 @@ static void zclSampleThermostat_processKey(uint8_t key, Button_EventMask buttonE
 //            zstack_bdbStartCommissioningReq.commissioning_mode = zclSampleThermostat_BdbCommissioningModes;
 //            Zstackapi_bdbStartCommissioningReq(appServiceTaskId,&zstack_bdbStartCommissioningReq);
 //        }
-        if(key == CONFIG_BTN_LEFT || key == CONFIG_BTN_RIGHT) { data_send = 0x1234; }
+//        if(key == CONFIG_BTN_LEFT || key == CONFIG_BTN_RIGHT) { data_send = 0x1234; }
     }
 }
 
@@ -1456,21 +1443,18 @@ static void zclSampleThermostat_InitializeStatusLine(CUI_clientHandle_t gCuiHand
 
 static void zclSampleThermostat_UpdateStatusLine(void)
 {
-    uint8_t i = 0;
-    double timer_average = 0.0;
-
     char lineFormat1[MAX_STATUS_LINE_VALUE_LEN] = {'\0'};
     char lineFormat2[MAX_STATUS_LINE_VALUE_LEN] = {'\0'};
 
-    strcat(lineFormat1, "["CUI_COLOR_YELLOW"Sent Value"CUI_COLOR_RESET"] 0x%04x ");
-    strcat(lineFormat1, "["CUI_COLOR_YELLOW"Received Value"CUI_COLOR_RESET"] 0x%04x");
-    strcat(lineFormat2, "["CUI_COLOR_YELLOW"Average time elapsed from send to receive"CUI_COLOR_RESET"] %d ms");
+//    strcat(lineFormat1, "["CUI_COLOR_YELLOW"Received Value 1"CUI_COLOR_RESET"] 0x%02x");
+//    strcat(lineFormat2, "["CUI_COLOR_YELLOW"Received Value 2"CUI_COLOR_RESET"] 0x%02x");
+//    strcat(lineFormat1, "["CUI_COLOR_YELLOW"Received Value 1"CUI_COLOR_RESET"] 0x%04x");
+//    strcat(lineFormat2, "["CUI_COLOR_YELLOW"Received Value 2"CUI_COLOR_RESET"] 0x%04x");
+    strcat(lineFormat1, "["CUI_COLOR_YELLOW"Received Value 1"CUI_COLOR_RESET"] 0x%08x");
+    strcat(lineFormat2, "["CUI_COLOR_YELLOW"Received Value 2"CUI_COLOR_RESET"] 0x%08x");
 
-    for (i = 0; i < timer_data_size; i++) { timer_average += timer_data[i]; }
-    timer_average /= timer_data_size;
-
-    CUI_statusLinePrintf(gCuiHandle, gSampleThermostatInfoLine1, lineFormat1, data_send, data_recieve);
-    CUI_statusLinePrintf(gCuiHandle, gSampleThermostatInfoLine2, lineFormat2, (int)(timer_average * 1000));
+    CUI_statusLinePrintf(gCuiHandle, gSampleThermostatInfoLine1, lineFormat1, data_recieve1);
+    CUI_statusLinePrintf(gCuiHandle, gSampleThermostatInfoLine2, lineFormat2, data_recieve2);
 }
 
 #endif
