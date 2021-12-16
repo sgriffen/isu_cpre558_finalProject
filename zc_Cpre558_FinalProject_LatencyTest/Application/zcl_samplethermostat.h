@@ -113,9 +113,9 @@ extern uint8_t zclSampleThermostat_ControlSequenceOfOperation;
 
 extern uint8_t zclSampleThermostat_SystemMode;
 
-extern uint8_t data_recieve;
+//extern uint8_t data_recieve;
 //extern uint16_t data_recieve;
-//extern uint32_t data_recieve;
+extern uint32_t data_recieve;
 
 /*********************************************************************
  * FUNCTIONS

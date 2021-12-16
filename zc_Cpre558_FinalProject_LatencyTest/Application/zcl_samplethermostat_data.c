@@ -113,9 +113,9 @@ int16_t zclSampleThermostat_OccupiedHeatingSetpoint;
 int16_t zclSampleThermostat_OccupiedCoolingSetpoint;
 
 //Custom data
-uint8_t data_recieve = 0x00;
+//uint8_t data_recieve = 0x00;
 //uint16_t data_recieve = 0x0000;
-//uint32_t data_recieve = 0x00000000;
+uint32_t data_recieve = 0x00000000;
 
 uint8_t zclSampleThermostat_ControlSequenceOfOperation;
 uint8_t zclSampleThermostat_SystemMode;
@@ -310,7 +310,7 @@ CONST zclAttrRec_t zclSampleThermostat_Attrs[] =
    ZCL_CLUSTER_ID_HVAC_THERMOSTAT,
    {  // Attribute record
      CUSTOMRECIEVE_ATTR_ID,
-     ZCL_DATATYPE_UINT8,
+     ZCL_DATATYPE_UINT32,
      ACCESS_CONTROL_READ | ACCESS_CLIENT,
      (void *)&data_recieve
    }
